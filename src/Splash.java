@@ -5,6 +5,7 @@ import java.util.TimerTask;
 public class Splash extends javax.swing.JFrame {
     int i = 0;
     int j = 0;
+    String text = "Giraffe Airlines";
     
     private void disposeThis(){
         this.dispose();
@@ -16,8 +17,7 @@ public class Splash extends javax.swing.JFrame {
         final Timer time = new Timer();
         TimerTask task = new TimerTask(){
             public void run(){
-                String text = "Giraffe Airlines";
-                if(i < 3700) { //Close the window after 3.5 seconds
+                if(i < 3700) { //Close the window after 3.7 seconds
                     if (i%80==0) j++; //increase j every 80 milliseconds
                     if(j>=text.length()) j=0;
                     i++;
@@ -28,16 +28,14 @@ public class Splash extends javax.swing.JFrame {
                             text.substring(j, j+1)+ "</font>"
                             + "<font color=#fea500>" +
                             text.substring(j+1)+ "</font> </html>");
-                }
-                else {
-                    //After 3.5 seconds, dispose this window and add a login window
+                } else {
+                    //After 3.7 seconds, dispose this window and add a login window
                     final Login login  = new Login();
                     login.setLocationRelativeTo(null);
                     login.show();
                     time.cancel();
                     disposeThis();
                 }
-                
             }
         };
         time.scheduleAtFixedRate(task, 0, 1);
