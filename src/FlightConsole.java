@@ -941,6 +941,9 @@ public class FlightConsole extends javax.swing.JFrame {
                 String sql = "DELETE FROM flight WHERE id = '" +
                         editTable.getModel().getValueAt(editTable.getSelectedRow(), 0) + "'";
                 smt.execute(sql);
+                sql = "DELETE FROM booking_list WHERE flight_id = '" +
+                        editTable.getModel().getValueAt(editTable.getSelectedRow(), 0) + "'";
+                smt.execute(sql);
                 //Refresh the tables
                 String[] editFilt = {editFilter.getText(),editFilter1.getText(),editFilter2.getText(),editFilter3.getText()};
                 refreshTable(editTable,editFilt,false,"");
