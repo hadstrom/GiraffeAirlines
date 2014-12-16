@@ -3,9 +3,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Splash extends javax.swing.JFrame {
-    int i = 0;
-    int j = 0;
-    String text = "Giraffe Airlines";
+    private int i = 0;
+    private int j = 0;
+    private String text = "Giraffe Airlines";
     
     private void disposeThis(){
         this.dispose();
